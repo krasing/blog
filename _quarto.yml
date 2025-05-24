@@ -9,6 +9,8 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/krasing
+      - icon: github
+        href: https://krasing.github.io/nn
 format:
   html:
     theme:
