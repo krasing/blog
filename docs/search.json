@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My notes and solutions",
+    "section": "",
+    "text": "CTEK MXS 5.0 to rescue dead car battery\n\n\n\nhardware\n\n\n\n\n\n\n\n\n\nMay 24, 2025\n\n\nKrasin Georgiev\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html",
+    "href": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html",
+    "title": "CTEK MXS 5.0 to rescue dead car battery",
+    "section": "",
+    "text": "How to recover deeply discharged car battery with CTEK MXS 5.0? The battery has been drained for more than an year and the voltage is below 3V"
+  },
+  {
+    "objectID": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html#initial-attempt",
+    "href": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html#initial-attempt",
+    "title": "CTEK MXS 5.0 to rescue dead car battery",
+    "section": "Initial attempt",
+    "text": "Initial attempt\nSo I started charging the battery, following the instructions and selecting “Car” and “Recond” modes.\n\n\n\nbattery\n\n\nUnfortunately at normal mode charging stops at stage 5. According to the user manual this means that the battery cannot keep charge.\nCharging at step 3 STEP 3 BULK (Charging with maximum current until approximately 80% battery capacity) was very short and at STEP 4 (ABSORPTION, BATTERY READY TO USE) it took about an hour. Than charging stopde at stage 5 (battery cannot keep charge)\nThe procedure was repeated several times by pressing the red button. No success."
+  },
+  {
+    "objectID": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html#the-solution",
+    "href": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html#the-solution",
+    "title": "CTEK MXS 5.0 to rescue dead car battery",
+    "section": "The solution",
+    "text": "The solution\nCharging the regular car battery (50–100Ah) using the CTEK MXS 5.0 in Small Battery mode (motorcycle symbol) actually worked. Charging stopped after 6 hours at Step 2 and the red light was on.\nAnalysis: Small Battery Mode is designed for smaller batteries — typically 1.2Ah to 14Ah. It uses a lower charging current (0.8A) compared to the normal car mode (5A). As there is a time limit for each charging step and charging a regular car battery (63Ah in this case) at 0.8A will take a very long time, the battery can’t be fully charged if it’s deeply discharged.\nThe procedure: - Charging in Small Battery Mode was repeated several times each with duration about 6h. Finally the charger managed to get through all steps. - Charging in Car Battery Mode was started and completed sucessfully after a few more hours"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "My notes and hints"
+  }
+]
