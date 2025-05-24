@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="me">
+<meta name="dcterms.date" content="2022-11-18">
 
-<title>My notes and solutions – blog</title>
+<title>Създаване на блог с quarto – blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8bc4c4c2e0e6b1131150ba1de09a18db.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8bc4c4c2e0e6b1131150ba1de09a18db.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">blog</span>
     </a>
   </div>
@@ -150,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -168,104 +110,138 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">My notes and solutions</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Създаване на блог с quarto</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">webtools</div>
+                <div class="quarto-category">bg</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>me </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 18, 2022</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Ymc=">bg <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGFyZHdhcmU=">hardware <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2VidG9vbHM=">webtools <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>Създаване на блог за техническа информация с използване на платформата <a href="https://quarto.org/">quarto</a></p>
+<section id="характеристики" class="level2">
+<h2 class="anchored" data-anchor-id="характеристики">Характеристики:</h2>
+<ul>
+<li>проста и интуитивна предварително зададена структура</li>
+<li>поддържа md синтаксис за въвеждане на текст, заглавия и секции, връзки, картинки, таблици</li>
+<li>поддържа преобразуване на jupyter тетрадки, съдържащи код, формули, графики</li>
+</ul>
+</section>
+<section id="основни-стъпки" class="level2">
+<h2 class="anchored" data-anchor-id="основни-стъпки">Основни стъпки:</h2>
+<ul>
+<li>локално инсталиране <a href="https://quarto.org/docs/get-started/">https://quarto.org/docs/get-started/</a></li>
+<li>генериране на структурата <a href="https://quarto.org/docs/websites/website-blog.html">https://quarto.org/docs/websites/website-blog.html</a>:
+<ul>
+<li><p>отваря се терминал от папката, където ще се съхранява блога и се изпълнява команда:</p>
+<pre><code> quarto create-project myblog --type website:blog</code></pre></li>
+<li><p>визуализира се генерирания блог</p>
+<pre><code> quarto preview myblog</code></pre></li>
+</ul></li>
+<li>редактират се различните файлове за запознаване със структурата.
+<ul>
+<li>Заглавната страница е във файл <code>index.qmd</code> в коренната директория.</li>
+<li>Обща информация за блога се дава във файл <code>about.qmd</code> в коренната директория</li>
+<li>Всяко съобщение има папка в папка <code>posts</code> и файл <code>index.qmd</code> с основното съдържание. В папката може да има и картинки.</li>
+</ul></li>
+<li>избира се тема за оформлението на сайта и се задава във файл <code>_quarto.yml</code>:</li>
+</ul>
+<pre><code>     format:
+       html:
+         theme: litera
+         css: styles.css</code></pre>
+<p>Темата по подразбиране е <code>cosmo</code> и е със синя заглавна лента. Темата, избрана за този блог е <code>litera</code> с по-убити цветове. Интересна тема е <code>journal</code>, както и много други (cerulean, cyborg, darkly, flatly, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr).</p>
+<ul>
+<li>редактират се връзките на шаблона във файл <code>_quarto.yml</code>:</li>
+</ul>
+<pre><code>website:
+  title: "blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/krasing</code></pre>
+</section>
+<section id="публикуване-на-jupyter-тетрадки" class="level2">
+<h2 class="anchored" data-anchor-id="публикуване-на-jupyter-тетрадки">Публикуване на Jupyter тетрадки</h2>
+<ul>
+<li>At the beginning of the jupyter notebook we need to add a cell of type raw with metadata, e.g.</li>
+</ul>
+<pre class="{jupyter}"><code>---
+title: "Gradients, broadcasting and backpropagation"
+author: "me"
+date: "2022-11-20"
+categories: [NN]
+format:
+  html:
+    code-fold: false
+jupyter: python3
+--- </code></pre>
+</section>
+<section id="публикуване-в-github" class="level2">
+<h2 class="anchored" data-anchor-id="публикуване-в-github">Публикуване в Github</h2>
+<ul>
+<li>във файл <code>_quarto.yml</code> се добавя ред <code>output-dir: docs</code>, така изходните страници ще се слагат в папка docs вместо в _site</li>
+</ul>
+<pre><code>project:
+    type: website
+    output-dir: docs</code></pre>
+<ul>
+<li>добавя се празен файл с име <code>.nojekyll</code> в базовата папка, за да се укаже на GitHub Pagesда не обработва допълнително сайта с Jekyll:</li>
+</ul>
+<pre><code>touch .nojekyll</code></pre>
+<ul>
+<li>прави се ново хранилище в GitHub, за пример ще го наречем <code>blog</code></li>
+<li>за отдалечен достъп до GitHub през терминал е необходимо да имаме GitHub Personal Access Token (PAT). Генерира се на адрес https://github.com/settings/tokens. Този код служи за парола при качване от терминал</li>
+<li>качват се локалните файлове в хранилището със следния код от терминал:</li>
+</ul>
+<pre><code>git init
+git add docs
+git commit -m "Publish site to docs/"
+git branch -M main
+git remote add origin https://github.com/krasing/blog.git
+git push -u origin main</code></pre>
+<ul>
+<li>настройва се хранилището в GitHub да се обслужва като уебсайт (Build and deployment), като от Settings –&gt; Pages се избира Source: Deploy from a branch, Branch: main, Select folder: /docs</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1748034000000" data-listing-file-modified-sort="1748099393809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
-<div class="thumbnail"><a href="./posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html" class="no-external">
-
-<img loading="lazy" src="./posts/dead_battery/battery.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html" class="no-external">CTEK MXS 5.0 to rescue dead car battery</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html" class="no-external">
-How to recover deeply discharged car battery with CTEK MXS 5.0? The battery has been drained for more than an year and the voltage is below 3V
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html" class="no-external">
-<div class="listing-date">
-May 24, 2025
-</div>
-<div class="listing-author">
-Krasin Georgiev
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="d2VidG9vbHMlMkNiZw==" data-listing-date-sort="1668722400000" data-listing-file-modified-sort="1748102199985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="499">
-<div class="thumbnail"><a href="./posts/blog-with-quarto/index.html" class="no-external">
-
-<img loading="lazy" src="https://quarto.org/quarto.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/blog-with-quarto/index.html" class="no-external">Създаване на блог с quarto</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('d2VidG9vbHM='); return false;">webtools</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ymc='); return false;">bg</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/blog-with-quarto/index.html" class="no-external">
-Създаване на блог за техническа информация с използване на платформата quarto
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/blog-with-quarto/index.html" class="no-external">
-<div class="listing-date">
-Nov 18, 2022
-</div>
-<div class="listing-author">
-me
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

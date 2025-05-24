@@ -4,7 +4,42 @@
     "href": "index.html",
     "title": "My notes and solutions",
     "section": "",
-    "text": "CTEK MXS 5.0 to rescue dead car battery\n\n\n\nhardware\n\n\n\n\n\n\n\n\n\nMay 24, 2025\n\n\nKrasin Georgiev\n\n\n\n\n\nNo matching items"
+    "text": "CTEK MXS 5.0 to rescue dead car battery\n\n\n\nhardware\n\n\n\n\n\n\n\n\n\nMay 24, 2025\n\n\nKrasin Georgiev\n\n\n\n\n\n\n\n\n\n\n\n\nСъздаване на блог с quarto\n\n\n\nwebtools\n\nbg\n\n\n\n\n\n\n\n\n\nNov 18, 2022\n\n\nme\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/blog-with-quarto/index.html",
+    "href": "posts/blog-with-quarto/index.html",
+    "title": "Създаване на блог с quarto",
+    "section": "",
+    "text": "Създаване на блог за техническа информация с използване на платформата quarto"
+  },
+  {
+    "objectID": "posts/blog-with-quarto/index.html#характеристики",
+    "href": "posts/blog-with-quarto/index.html#характеристики",
+    "title": "Създаване на блог с quarto",
+    "section": "Характеристики:",
+    "text": "Характеристики:\n\nпроста и интуитивна предварително зададена структура\nподдържа md синтаксис за въвеждане на текст, заглавия и секции, връзки, картинки, таблици\nподдържа преобразуване на jupyter тетрадки, съдържащи код, формули, графики"
+  },
+  {
+    "objectID": "posts/blog-with-quarto/index.html#основни-стъпки",
+    "href": "posts/blog-with-quarto/index.html#основни-стъпки",
+    "title": "Създаване на блог с quarto",
+    "section": "Основни стъпки:",
+    "text": "Основни стъпки:\n\nлокално инсталиране https://quarto.org/docs/get-started/\nгенериране на структурата https://quarto.org/docs/websites/website-blog.html:\n\nотваря се терминал от папката, където ще се съхранява блога и се изпълнява команда:\n quarto create-project myblog --type website:blog\nвизуализира се генерирания блог\n quarto preview myblog\n\nредактират се различните файлове за запознаване със структурата.\n\nЗаглавната страница е във файл index.qmd в коренната директория.\nОбща информация за блога се дава във файл about.qmd в коренната директория\nВсяко съобщение има папка в папка posts и файл index.qmd с основното съдържание. В папката може да има и картинки.\n\nизбира се тема за оформлението на сайта и се задава във файл _quarto.yml:\n\n     format:\n       html:\n         theme: litera\n         css: styles.css\nТемата по подразбиране е cosmo и е със синя заглавна лента. Темата, избрана за този блог е litera с по-убити цветове. Интересна тема е journal, както и много други (cerulean, cyborg, darkly, flatly, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr).\n\nредактират се връзките на шаблона във файл _quarto.yml:\n\nwebsite:\n  title: \"blog\"\n  navbar:\n    right:\n      - about.qmd\n      - icon: github\n        href: https://github.com/krasing"
+  },
+  {
+    "objectID": "posts/blog-with-quarto/index.html#публикуване-на-jupyter-тетрадки",
+    "href": "posts/blog-with-quarto/index.html#публикуване-на-jupyter-тетрадки",
+    "title": "Създаване на блог с quarto",
+    "section": "Публикуване на Jupyter тетрадки",
+    "text": "Публикуване на Jupyter тетрадки\n\nAt the beginning of the jupyter notebook we need to add a cell of type raw with metadata, e.g.\n\n---\ntitle: \"Gradients, broadcasting and backpropagation\"\nauthor: \"me\"\ndate: \"2022-11-20\"\ncategories: [NN]\nformat:\n  html:\n    code-fold: false\njupyter: python3\n---"
+  },
+  {
+    "objectID": "posts/blog-with-quarto/index.html#публикуване-в-github",
+    "href": "posts/blog-with-quarto/index.html#публикуване-в-github",
+    "title": "Създаване на блог с quarto",
+    "section": "Публикуване в Github",
+    "text": "Публикуване в Github\n\nвъв файл _quarto.yml се добавя ред output-dir: docs, така изходните страници ще се слагат в папка docs вместо в _site\n\nproject:\n    type: website\n    output-dir: docs\n\nдобавя се празен файл с име .nojekyll в базовата папка, за да се укаже на GitHub Pagesда не обработва допълнително сайта с Jekyll:\n\ntouch .nojekyll\n\nправи се ново хранилище в GitHub, за пример ще го наречем blog\nза отдалечен достъп до GitHub през терминал е необходимо да имаме GitHub Personal Access Token (PAT). Генерира се на адрес https://github.com/settings/tokens. Този код служи за парола при качване от терминал\nкачват се локалните файлове в хранилището със следния код от терминал:\n\ngit init\ngit add docs\ngit commit -m \"Publish site to docs/\"\ngit branch -M main\ngit remote add origin https://github.com/krasing/blog.git\ngit push -u origin main\n\nнастройва се хранилището в GitHub да се обслужва като уебсайт (Build and deployment), като от Settings –&gt; Pages се избира Source: Deploy from a branch, Branch: main, Select folder: /docs"
   },
   {
     "objectID": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html",
@@ -25,7 +60,7 @@
     "href": "posts/dead_battery/How to recover deeply discharged car battery with CTEK MXS 5.0.html#the-solution",
     "title": "CTEK MXS 5.0 to rescue dead car battery",
     "section": "The solution",
-    "text": "The solution\nCharging the regular car battery (50–100Ah) using the CTEK MXS 5.0 in Small Battery mode (motorcycle symbol) actually worked. Charging stopped after 6 hours at Step 2 and the red light was on.\nAnalysis: Small Battery Mode is designed for smaller batteries — typically 1.2Ah to 14Ah. It uses a lower charging current (0.8A) compared to the normal car mode (5A). As there is a time limit for each charging step and charging a regular car battery (63Ah in this case) at 0.8A will take a very long time, the battery can’t be fully charged if it’s deeply discharged.\nThe procedure: - Charging in Small Battery Mode was repeated several times each with duration about 6h. Finally the charger managed to get through all steps. - Charging in Car Battery Mode was started and completed sucessfully after a few more hours"
+    "text": "The solution\nCharging the regular car battery (50–100Ah) using the CTEK MXS 5.0 in Small Battery mode (motorcycle symbol) actually worked. Charging stopped after 6 hours at Step 2 and the red light was on.\nAnalysis: Small Battery Mode is designed for smaller batteries — typically 1.2Ah to 14Ah. It uses a lower charging current (0.8A) compared to the normal car mode (5A). As there is a time limit for each charging step and charging a regular car battery (63Ah in this case) at 0.8A will take a very long time, the battery can’t be fully charged if it’s deeply discharged.\nThe procedure: - Charging in Small Battery Mode was repeated several times each with duration about 6h. Finally the charger managed to get through all steps. - Charging in Car Battery Mode was started and completed sucessfully after a few more hours\n\nimport numpy as np\nimport pandas as pd\nfrom matplotlib import pyplot as plt\n\n\ntime = ['13:18', '13:40', '14:00', '14:26', '15:00','16:45', '18:45', '21:50', '24:30']\ndatetime = ['2025-05-05 '+t for t in time]\ndatetime[-1]='2025-05-06 00:30'\n\nvoltage = [8.12, 13.8, 10.9, 10.18, 9.75, 8.88, 8.41, 8.00, 7.8]\n\nplt.plot(time, voltage)\n\n\n\n\n\n\n\n\n\nnp.array(datetime,dtype=np.datetime64)\n\narray(['2025-05-05T13:18', '2025-05-05T13:40', '2025-05-05T14:00',\n       '2025-05-05T14:26', '2025-05-05T15:00', '2025-05-05T16:45',\n       '2025-05-05T18:45', '2025-05-05T21:50', '2025-05-06T00:30'],\n      dtype='datetime64[m]')\n\n\n\nplt.figure(figsize=[6,3])\nplt.plot(datetime, voltage)\nplt.ylim(0, 14)\nplt.xticks(rotation = 45);"
   },
   {
     "objectID": "about.html",

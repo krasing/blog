@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -181,6 +216,49 @@ ul.task-list li input[type="checkbox"] {
 <p>Charging the regular car battery (50–100Ah) using the CTEK MXS 5.0 in Small Battery mode (motorcycle symbol) actually worked. Charging stopped after 6 hours at Step 2 and the red light was on.</p>
 <p>Analysis: Small Battery Mode is designed for smaller batteries — typically 1.2Ah to 14Ah. It uses a lower charging current (0.8A) compared to the normal car mode (5A). As there is a time limit for each charging step and charging a regular car battery (63Ah in this case) at 0.8A will take a very long time, the battery can’t be fully charged if it’s deeply discharged.</p>
 <p>The procedure: - Charging in Small Battery Mode was repeated several times each with duration about 6h. Finally the charger managed to get through all steps. - Charging in Car Battery Mode was started and completed sucessfully after a few more hours</p>
+<div id="3f7f6b5a" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d83b72d5" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> [<span class="st">'13:18'</span>, <span class="st">'13:40'</span>, <span class="st">'14:00'</span>, <span class="st">'14:26'</span>, <span class="st">'15:00'</span>,<span class="st">'16:45'</span>, <span class="st">'18:45'</span>, <span class="st">'21:50'</span>, <span class="st">'24:30'</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>datetime <span class="op">=</span> [<span class="st">'2025-05-05 '</span><span class="op">+</span>t <span class="cf">for</span> t <span class="kw">in</span> time]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>datetime[<span class="op">-</span><span class="dv">1</span>]<span class="op">=</span><span class="st">'2025-05-06 00:30'</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>voltage <span class="op">=</span> [<span class="fl">8.12</span>, <span class="fl">13.8</span>, <span class="fl">10.9</span>, <span class="fl">10.18</span>, <span class="fl">9.75</span>, <span class="fl">8.88</span>, <span class="fl">8.41</span>, <span class="fl">8.00</span>, <span class="fl">7.8</span>]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.plot(time, voltage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="How to recover deeply discharged car battery with CTEK MXS 5.0_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="4af01843" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.array(datetime,dtype<span class="op">=</span>np.datetime64)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>array(['2025-05-05T13:18', '2025-05-05T13:40', '2025-05-05T14:00',
+       '2025-05-05T14:26', '2025-05-05T15:00', '2025-05-05T16:45',
+       '2025-05-05T18:45', '2025-05-05T21:50', '2025-05-06T00:30'],
+      dtype='datetime64[m]')</code></pre>
+</div>
+</div>
+<div id="027428fe" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>[<span class="dv">6</span>,<span class="dv">3</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.plot(datetime, voltage)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">14</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation <span class="op">=</span> <span class="dv">45</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="How to recover deeply discharged car battery with CTEK MXS 5.0_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
